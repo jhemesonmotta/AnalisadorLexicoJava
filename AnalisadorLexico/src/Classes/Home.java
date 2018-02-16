@@ -46,7 +46,7 @@ public final class Home extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Código: ");
+        jLabel1.setText("Código: (atenção, separe tudo por espaços em branco)");
 
         btnAnalisar.setText("Analisar");
         btnAnalisar.addActionListener(new java.awt.event.ActionListener() {
@@ -139,8 +139,8 @@ public final class Home extends javax.swing.JFrame {
         palavraR.add(new PalavraReservada("double", "Tipo de Dado"));
         palavraR.add(new PalavraReservada("float", "Tipo de Dado"));
         palavraR.add(new PalavraReservada("String", "Tipo de Dado"));
-        palavraR.add(new PalavraReservada("true", "Verdadeiro"));
-        palavraR.add(new PalavraReservada("false", "Falso"));
+        palavraR.add(new PalavraReservada("true", "constante"));
+        palavraR.add(new PalavraReservada("false", "constante"));
         palavraR.add(new PalavraReservada("if", "Condicional"));
         palavraR.add(new PalavraReservada("else", "Condicional"));
         palavraR.add(new PalavraReservada("for", "Laço de Repetição"));
@@ -151,11 +151,15 @@ public final class Home extends javax.swing.JFrame {
         palavraR.add(new PalavraReservada(")", "Limitador"));
         palavraR.add(new PalavraReservada("{", "Limitador"));
         palavraR.add(new PalavraReservada("}", "Limitador"));
-        palavraR.add(new PalavraReservada(">", "Maior Que"));
-        palavraR.add(new PalavraReservada("<", "Menor Que"));
+        palavraR.add(new PalavraReservada(">", "operador"));
+        palavraR.add(new PalavraReservada("<", "operador"));
         palavraR.add(new PalavraReservada(";", "Finalizador"));
         palavraR.add(new PalavraReservada(".", "Limitador"));
-        palavraR.add(new PalavraReservada("=", "Atribuidor"));
+        palavraR.add(new PalavraReservada("=", "operador"));
+        palavraR.add(new PalavraReservada("-", "operador"));
+        palavraR.add(new PalavraReservada("+", "operador"));
+        palavraR.add(new PalavraReservada("/", "operador"));
+        palavraR.add(new PalavraReservada("*", "operador"));
         palavraR.add(new PalavraReservada("‘", "Limitador"));
         palavraR.add(new PalavraReservada("’", "Limitador"));
         palavraR.add(new PalavraReservada("\"", "Limitador"));
@@ -201,6 +205,7 @@ public final class Home extends javax.swing.JFrame {
             
             for(int i=0; i<linhasSplit.length; i++){
                 String palavraCache = "";
+                int cont_identificadores = 1;
                 
                 for(int j = 0; j<linhasSplit[i].length(); j++){
                     PalavraReservada nova = new PalavraReservada();
@@ -219,12 +224,14 @@ public final class Home extends javax.swing.JFrame {
                             }
                             else{
                                 if(linhasSplit[i].charAt(j) == ' '){
-                                    PalavraReservada identificador = new PalavraReservada(palavraCache, "Token Identificador");
+                                    PalavraReservada identificador = new PalavraReservada(palavraCache, "Identificador " + cont_identificadores);
                                     listaPalavrasQueVaoPraTabela.add(new PalavraReservada_Posicao(identificador, i, j));
                                     palavraCache = "";
+                                    cont_identificadores = 1 + cont_identificadores;
                                 }
                                 else if(j == linhasSplit[i].length()-1){
-                                    PalavraReservada identificador = new PalavraReservada(palavraCache, "Token Identificador");
+                                    PalavraReservada identificador = new PalavraReservada(palavraCache+linhasSplit[i].charAt(j), "Identificador "  + cont_identificadores);
+                                    cont_identificadores = 1 + cont_identificadores;
                                     listaPalavrasQueVaoPraTabela.add(new PalavraReservada_Posicao(identificador, i, j));
                                     palavraCache = "";
                                 }
@@ -238,9 +245,10 @@ public final class Home extends javax.swing.JFrame {
                                 palavraCache = "";
                             }
                             else if(j == linhasSplit[i].length()-1){
-                                PalavraReservada identificador = new PalavraReservada(palavraCache, "Token Identificador");
+                                PalavraReservada identificador = new PalavraReservada(palavraCache+linhasSplit[i].charAt(j), "Identificador "  + cont_identificadores);
                                 listaPalavrasQueVaoPraTabela.add(new PalavraReservada_Posicao(identificador, i, j));
                                 palavraCache = "";
+                                cont_identificadores = 1 + cont_identificadores;
                             }
                             else{
                                 palavraCache = palavraCache + linhasSplit[i].charAt(j);
