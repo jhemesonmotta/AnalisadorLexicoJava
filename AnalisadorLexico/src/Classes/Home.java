@@ -14,6 +14,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public final class Home extends javax.swing.JFrame {
     static ArrayList<PalavraReservada> palavraR;
+    static ArrayList<String> numeros_naturais;
 
     /**
      * Creates new form Home
@@ -21,8 +22,8 @@ public final class Home extends javax.swing.JFrame {
     public Home() {
         initComponents();
         palavraR = new ArrayList<>();
+        numeros_naturais = new ArrayList<>();
         diretoNoCodigo();
-        System.out.println("começou");
     }
 
     /**
@@ -129,40 +130,51 @@ public final class Home extends javax.swing.JFrame {
         palavraR.add(new PalavraReservada("protected", "Protegido"));
         palavraR.add(new PalavraReservada("this", "Este"));
         palavraR.add(new PalavraReservada("do", "Fazer"));
-        palavraR.add(new PalavraReservada("while", "Laço de Repetição"));
+        palavraR.add(new PalavraReservada("while", "Enquanto"));
         palavraR.add(new PalavraReservada("switch", "Mudança"));
         palavraR.add(new PalavraReservada("case", "Caso"));
         palavraR.add(new PalavraReservada("return", "Retorno"));
         palavraR.add(new PalavraReservada("void", "Vazio"));
-        palavraR.add(new PalavraReservada("int", "Tipo de Dado"));
-        palavraR.add(new PalavraReservada("long", "Tipo de Dado"));
-        palavraR.add(new PalavraReservada("double", "Tipo de Dado"));
-        palavraR.add(new PalavraReservada("float", "Tipo de Dado"));
-        palavraR.add(new PalavraReservada("String", "Tipo de Dado"));
-        palavraR.add(new PalavraReservada("true", "constante"));
-        palavraR.add(new PalavraReservada("false", "constante"));
-        palavraR.add(new PalavraReservada("if", "Condicional"));
-        palavraR.add(new PalavraReservada("else", "Condicional"));
-        palavraR.add(new PalavraReservada("for", "Laço de Repetição"));
-        palavraR.add(new PalavraReservada("break", "Qubra"));
+        palavraR.add(new PalavraReservada("int", "Tipo de Dado Inteiro"));
+        palavraR.add(new PalavraReservada("long", "Tipo de Dado Longo"));
+        palavraR.add(new PalavraReservada("double", "Tipo de Dado Real"));
+        palavraR.add(new PalavraReservada("float", "Tipo de Dado Flutuante"));
+        palavraR.add(new PalavraReservada("String", "Tipo de Dado de Texto"));
+        palavraR.add(new PalavraReservada("true", "Constante"));
+        palavraR.add(new PalavraReservada("false", "Constante"));
+        palavraR.add(new PalavraReservada("if", "Se"));
+        palavraR.add(new PalavraReservada("else", "Se não"));
+        palavraR.add(new PalavraReservada("for", "Para"));
+        palavraR.add(new PalavraReservada("break", "Quebra"));
         palavraR.add(new PalavraReservada("default", "Padrão"));
-        palavraR.add(new PalavraReservada("boolean", "Tipo de Dado"));
-        palavraR.add(new PalavraReservada("(", "Limitador"));
-        palavraR.add(new PalavraReservada(")", "Limitador"));
-        palavraR.add(new PalavraReservada("{", "Limitador"));
-        palavraR.add(new PalavraReservada("}", "Limitador"));
-        palavraR.add(new PalavraReservada(">", "operador"));
-        palavraR.add(new PalavraReservada("<", "operador"));
+        palavraR.add(new PalavraReservada("boolean", "Tipo de Dado Booleano"));
+        palavraR.add(new PalavraReservada("(", "Abre Parênteses"));
+        palavraR.add(new PalavraReservada(")", "Fecha Parênteses"));
+        palavraR.add(new PalavraReservada("{", "Abre Chaves"));
+        palavraR.add(new PalavraReservada("}", "Fecha Chaves"));
+        palavraR.add(new PalavraReservada(">", "Maior que"));
+        palavraR.add(new PalavraReservada("<", "Menor que"));
         palavraR.add(new PalavraReservada(";", "Finalizador"));
-        palavraR.add(new PalavraReservada(".", "Limitador"));
-        palavraR.add(new PalavraReservada("=", "operador"));
-        palavraR.add(new PalavraReservada("-", "operador"));
-        palavraR.add(new PalavraReservada("+", "operador"));
-        palavraR.add(new PalavraReservada("/", "operador"));
-        palavraR.add(new PalavraReservada("*", "operador"));
-        palavraR.add(new PalavraReservada("‘", "Limitador"));
-        palavraR.add(new PalavraReservada("’", "Limitador"));
-        palavraR.add(new PalavraReservada("\"", "Limitador"));
+        palavraR.add(new PalavraReservada(".", "Ponto"));
+        palavraR.add(new PalavraReservada("=", "Operador"));
+        palavraR.add(new PalavraReservada("-", "Operador"));
+        palavraR.add(new PalavraReservada("+", "Operador"));
+        palavraR.add(new PalavraReservada("/", "Operador"));
+        palavraR.add(new PalavraReservada("*", "Operador"));
+        palavraR.add(new PalavraReservada("‘", "Abre Aspas S"));
+        palavraR.add(new PalavraReservada("’", "Fecha Aspas S"));
+        palavraR.add(new PalavraReservada("\"", "Aspa Dupla"));
+        
+        numeros_naturais.add("0");
+        numeros_naturais.add("1");
+        numeros_naturais.add("2");
+        numeros_naturais.add("3");
+        numeros_naturais.add("4");
+        numeros_naturais.add("5");
+        numeros_naturais.add("6");
+        numeros_naturais.add("7");
+        numeros_naturais.add("8");
+        numeros_naturais.add("9");
         
         //palavraR.add(new AlbumArtista(listaAlbuns.get(0), listaArtistas.get(0)));
     }
@@ -172,7 +184,6 @@ public final class Home extends javax.swing.JFrame {
         
         for(PalavraReservada_Posicao palavra: listaPalavrasQueVaoPraTabela){
             String[] linha = {palavra.getPalavraReservada().getToken(), palavra.getPalavraReservada().getIdentificacao(), "(" + palavra.getColuna()+","+palavra.getLinha()+")"};
-            System.out.print("Linha: " + linha);
             modelo.addRow(linha); 
         }
     }
@@ -181,12 +192,8 @@ public final class Home extends javax.swing.JFrame {
         PalavraReservada pReservada = new PalavraReservada();
        
         
-        for(PalavraReservada palavra: palavraR){
-//            System.out.println("cforache: " + palavraCache);
-//            System.out.println("palavra: " + palavra.getToken());
-//            System.out.println("iguais: " + palavraCache.equalsIgnoreCase(palavra.getToken()));            
-            if (palavraCache.equals(palavra.getToken())){ 
-                System.out.println("São iguais");
+        for(PalavraReservada palavra: palavraR){           
+            if (palavraCache.equals(palavra.getToken())){
                 return palavra;
             }
         }   
@@ -204,55 +211,41 @@ public final class Home extends javax.swing.JFrame {
             String[] linhasSplit = linhas.split("\n");
             
             for(int i=0; i<linhasSplit.length; i++){
+                if(linhasSplit[i].length() == 0){
+                    i = i + 1;
+                }
                 String palavraCache = "";
-                int cont_identificadores = 1;
+                linhasSplit[i] = linhasSplit[i] + " ";
                 
                 for(int j = 0; j<linhasSplit[i].length(); j++){
                     PalavraReservada nova = new PalavraReservada();
+                    nova = ehReservada(palavraCache);
+                    
                     try{
-                        nova = ehReservada(palavraCache);
-                    }
-                    catch(Exception ex){
-                       nova = new PalavraReservada();
-                    }
-                    try{
-                        try{
-                            if(!nova.toString().equalsIgnoreCase("PalavraReservada{token=null, identificacao=null}")){
-                                System.out.println("Vai adicionar: " + nova.getToken());
-                                listaPalavrasQueVaoPraTabela.add(new PalavraReservada_Posicao(nova, i, j));
-                                palavraCache = "";
-                            }
-                            else{
-                                if(linhasSplit[i].charAt(j) == ' '){
-                                    PalavraReservada identificador = new PalavraReservada(palavraCache, "Identificador " + cont_identificadores);
+                        if(!(nova.toString().equalsIgnoreCase("PalavraReservada{token=null, identificacao=null}")) && linhasSplit[i].charAt(j) == ' '){;
+                            listaPalavrasQueVaoPraTabela.add(new PalavraReservada_Posicao(nova, i, j));
+                            palavraCache = "";
+                        }
+                        else{
+                            if(linhasSplit[i].charAt(j) == ' '){
+                                double valor = 0;
+                                if(ehNumero(palavraCache)){
+                                    PalavraReservada identificador = new PalavraReservada(palavraCache, "Constante");
                                     listaPalavrasQueVaoPraTabela.add(new PalavraReservada_Posicao(identificador, i, j));
-                                    palavraCache = "";
-                                    cont_identificadores = 1 + cont_identificadores;
-                                }
-                                else if(j == linhasSplit[i].length()-1){
-                                    PalavraReservada identificador = new PalavraReservada(palavraCache+linhasSplit[i].charAt(j), "Identificador "  + cont_identificadores);
-                                    cont_identificadores = 1 + cont_identificadores;
-                                    listaPalavrasQueVaoPraTabela.add(new PalavraReservada_Posicao(identificador, i, j));
-                                    palavraCache = "";
                                 }
                                 else{
-                                    palavraCache = palavraCache + linhasSplit[i].charAt(j);
+                                    PalavraReservada identificador = new PalavraReservada(palavraCache, "Identificador");
+                                    listaPalavrasQueVaoPraTabela.add(new PalavraReservada_Posicao(identificador, i, j));
                                 }
-                            }
-                        }
-                        catch(Exception err){
-                            if(linhasSplit[i].charAt(j) == ' '){
                                 palavraCache = "";
                             }
                             else if(j == linhasSplit[i].length()-1){
-                                PalavraReservada identificador = new PalavraReservada(palavraCache+linhasSplit[i].charAt(j), "Identificador "  + cont_identificadores);
+                                PalavraReservada identificador = new PalavraReservada(palavraCache+linhasSplit[i].charAt(j), "Identificador");
                                 listaPalavrasQueVaoPraTabela.add(new PalavraReservada_Posicao(identificador, i, j));
                                 palavraCache = "";
-                                cont_identificadores = 1 + cont_identificadores;
                             }
                             else{
                                 palavraCache = palavraCache + linhasSplit[i].charAt(j);
-                                System.out.println("foi pro else, palavra atual: " + palavraCache);
                             }
                         }
                     }
@@ -264,6 +257,16 @@ public final class Home extends javax.swing.JFrame {
             }
             preencheTabela(listaPalavrasQueVaoPraTabela);
         }
+    }
+    
+    public boolean ehNumero(String palavraReservada){
+        boolean eh = true;
+        for(char i : palavraReservada.toCharArray()){
+            if(!(numeros_naturais.contains(i+""))){
+                eh = false;
+            }
+        }
+        return eh;
     }
  
     public static void main(String args[]) {
